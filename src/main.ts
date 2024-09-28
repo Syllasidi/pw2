@@ -8,23 +8,23 @@ import Cart from './classes/Cart';
 
  //une instance de Starship
 const myStarship = new Starship('Prometheus', 100000);
-console.log("la réf ",myStarship.id ,"le statut",myStarship.statut)
+console.log("le vaisseau ",myStarship.id ,"est :",myStarship.statut)
 
 // methode takeoff
 myStarship.takeoff()
-console.log("la réf ",myStarship.id ,"le statut",myStarship.statut)
+console.log("le vaisseau ",myStarship.id ,"est :",myStarship.statut)
 
 //methode fly
 myStarship.fly()
-console.log("la réf ",myStarship.id ,"le statut",myStarship.statut)
+console.log("le vaisseau ",myStarship.id ,"est :",myStarship.statut)
 
 // methode land
 myStarship.land()
-console.log("la réf ",myStarship.id ,"le statut",myStarship.statut)
+console.log("le vaisseau ",myStarship.id ,"est :",myStarship.statut)
 
 //methode park
 myStarship.park()
-console.log("la réf ",myStarship.id ,"le statut",myStarship.statut)
+console.log("le vaisseau ",myStarship.id ,"est",myStarship.statut)
 
 
 //Création du tableau de planètes
@@ -62,23 +62,24 @@ console.log(`La distance moyenne de la Terre aux planètes est de ${averageDista
 // fonction calculateFlightDurationFromEarth
 
 const res = calculateFlightDurationFromEarth(planets[3],myStarship, "hours")
-console.log("Durée du vol vers ",planets[3].name,":",res,"Heures donc ",res/24," jours")
+console.log("Durée du vol vers ",planets[3].name,":",res,"Heures ")
 
 
-const lemon = new Citron(0.5);
+const citron = new Citron(0.5);
 const oliveOil = new OliveOil(5);
-const sugar = new Sucre(3.9);
-const tomato = new TomateCerise(3.5);
+const sucre = new Sucre(3.9);
+const tomate = new TomateCerise(3.5);
 
 const cart = new Cart();
-cart.add(lemon, 2);
+cart.add(citron, 2);
 cart.add(oliveOil, 1.5);
-cart.add(sugar, 0.5);
-cart.add(lemon, 5);
-cart.add(sugar, 3);
-cart.add(tomato, 1.5);
+cart.add(sucre, 0.5); // 0,5 kg = 500g
+cart.add(citron, 5);
+cart.add(sucre, 3);
+cart.add(tomate, 1.5);
 
-console.log("Nombre de types de produits:", cart.orderLines.length);
-console.log("Montant pour les tomates:", cart.calculateAmountByProduct(tomato));
+
+console.log("Nombre de types de produits:", cart.orderLines.length);// c'est la taille de la liste
+console.log("Montant pour les tomates:", cart.calculateAmountByProduct(tomate));
 console.log("Montant total:", cart.calculateAmount());
 console.log("Détails du panier:", cart.displayDetails());

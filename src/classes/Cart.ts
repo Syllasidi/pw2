@@ -11,15 +11,18 @@ add(produit: IProduit, qte: number) {
     const orderLine = this.orderLines.find(line => line.produit.id === produit.id);
     return orderLine ? orderLine.produit.getprice(orderLine.qte) : 0;
   }
+  
   calculateAmount(): number {
     return this.orderLines.reduce((total, line) => total + line.produit.getprice(line.qte), 0);
   }
 
   displayDetails(): string[] {
     return this.orderLines.map(line => {
-      const { produit, qte } = line;
+      const { produit, qte } = line; // méme chose que line.produit et line.qte ça s'appeelle "la destructuration"
       const amount = produit.getprice(qte);
       return `ID: ${produit.id}, Nom: ${produit.name}, Prix unitaire: ${produit.unitPrice}, Unité: ${produit.unit}, Quantité: ${qte}, Montant: ${amount}`;
+      /* sans la destructuration
+       return `ID: ${line.produit.id}, Nom: ${line.produit.name}, etc..*/
     });
   }
 

@@ -16,7 +16,7 @@ this.statut = StarshipStatus.PARKED;
 if (id && validator.isUUID(id, 4)) {
     this.id = id;
   } else if (id) {
-    throw new Error("L'ID fourni n'est pas un UUID (v4) valide.");
+    throw new Error("Oups! l'ID a un probleme il est pas valide ");
   } else {
     this.id = uuidv4(); // id type UUID est automatiquement attribué
   }
@@ -47,7 +47,7 @@ if (id && validator.isUUID(id, 4)) {
     land(){
         if (this.statut == StarshipStatus.FLYING){
             this.statut = StarshipStatus.LANDING;
-           console.log("Le vaisseau est en cours d'atterrissage \n ")
+           console.log("Le vaisseau est entrain d'atterir  \n ")
             
         }else{
         throw new Error("Le vaisseau ne peut atterir que s'il est en vol !");}
@@ -57,7 +57,7 @@ if (id && validator.isUUID(id, 4)) {
     park(){
         if (this.statut == StarshipStatus.LANDING){
             this.statut = StarshipStatus.PARKED;
-            console.log("Le vaisseau est bien stationé \n")
+            console.log("Le vaisseau est bien stationé merci \n")
             
         }
         else{throw new Error("Le vaisseau ne peut stationer que s'il est en atterisage !"); }
