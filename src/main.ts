@@ -2,8 +2,11 @@
 import type { Planet } from './Planets';
 import { Starship, StarshipStatus } from './Starship'; 
 import { calculateFlightDurationFromEarth } from './utils/flightCalculator';
-import { Citron, OliveOil, Sucre, TomateCerise } from './classes/Produits';
+import { Citron, } from './classes/Produits/Citron';
 import Cart from './classes/Cart';
+import { TomateCerise } from './classes/Produits/TomateCerise ';
+import { OliveOil } from './classes/Produits/OliveOil';
+import { Sucre } from './classes/Produits/Sucre';
 
 
  //une instance de Starship
