@@ -1,8 +1,4 @@
-# td2
-Nom: Sylla  
- 
-Prénom : sidi   
-Numero étudiant : 32323182
+
 To install dependencies:
 
 ```bash
